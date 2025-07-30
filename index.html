@@ -21,7 +21,7 @@
         }
         /* This ensures that when you jump to a section, the fixed header doesn't cover the section's title. */
         section[id] {
-            scroll-margin-top: 100px;
+            scroll-margin-top: 80px;
         }
     </style>
 </head>
@@ -33,18 +33,19 @@
       - Background color changes on scroll for better visibility.
     -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#home" class="flex items-center space-x-3">
-                <img src="logo.png" alt="Aquasphere Logo" class="h-14 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/250x60/ffffff/333333?text=Aquasphere';">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Text Logo -->
+            <a href="#home" id="header-logo" class="text-white transition-colors duration-300">
+                <div class="font-bold text-xl tracking-wider">AQUASPHERE</div>
+                <div class="text-xs tracking-widest">Flowing insights</div>
             </a>
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">Home</a>
-                <a href="#services" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">Services</a>
-                <a href="#about" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">About</a>
-                <a href="#contact" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">Contact</a>
+                <a href="#home" class="nav-link text-white hover:text-green-200 transition-colors duration-300 font-medium">Home</a>
+                <a href="#services" class="nav-link text-white hover:text-green-200 transition-colors duration-300 font-medium">Services</a>
+                <a href="#about" class="nav-link text-white hover:text-green-200 transition-colors duration-300 font-medium">About</a>
+                <a href="#contact" class="nav-link text-white hover:text-green-200 transition-colors duration-300 font-medium">Contact</a>
             </nav>
 
             <!-- Mobile Menu Button -->
@@ -64,57 +65,49 @@
 
     <main>
         <!-- 
-          Hero Section (New Design)
-          - Features the logo as the main element on a clean background.
+          Hero Section (Full-page Logo)
+          - Features the logo as the main element, responsive to window size.
         -->
-        <section id="home" class="h-screen flex flex-col items-center justify-center text-center bg-white">
-            <div class="px-4">
-                <!-- Logo as the main visual element -->
-                <img src="logo.png" alt="Aquasphere Logo" class="h-32 md:h-40 w-auto mx-auto mb-8" onerror="this.onerror=null;this.src='https://placehold.co/400x100/ffffff/333333?text=Aquasphere';">
-                
-                <p class="text-lg md:text-2xl max-w-3xl mx-auto mb-8 text-gray-700">Tailored hydrological data and advanced modeling solutions to navigate the complexities of water resources.</p>
-                
-                <a href="#services" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
-                    Our Services
-                </a>
-            </div>
+        <section id="home" class="h-screen w-screen flex flex-col items-center justify-center text-center bg-white p-4 sm:p-8 md:p-12">
+            <!-- Logo as the main visual element -->
+            <img src="logo.png" alt="Aquasphere Logo" class="max-w-full max-h-full object-contain" onerror="this.onerror=null;this.src='https://placehold.co/800x400/ffffff/333333?text=Aquasphere+Logo';">
         </section>
 
         <!-- 
-          Services Section
+          Services Section (Dark Theme)
         -->
-        <section id="services" class="py-20 bg-gray-50">
+        <section id="services" class="py-20 bg-black">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Core Expertise</h2>
-                    <p class="text-lg text-gray-600 mt-2">Delivering precision in hydrological analysis.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Our Core Expertise</h2>
+                    <p class="text-lg text-gray-400 mt-2">Delivering precision in hydrological analysis.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                     <!-- Service Card 1: Hydrological Datasets -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
-                        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" /></svg>
+                    <div class="bg-gray-900 p-8 rounded-xl shadow-md hover:shadow-xl hover:shadow-green-500/20 transition-shadow duration-300 text-center">
+                        <div class="bg-gray-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" /></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Large-Scale Hydrological Datasets</h3>
-                        <p class="text-gray-600">Creation of custom, large-scale hydrological datasets for discharge, water quality, and other key metrics to power your projects.</p>
+                        <h3 class="text-xl font-bold mb-3 text-white">Large-Scale Hydrological Datasets</h3>
+                        <p class="text-gray-400">Creation of custom, large-scale hydrological datasets for discharge, water quality, and other key metrics to power your projects.</p>
                     </div>
 
                     <!-- Service Card 2: Numerical Modeling -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
-                        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                           <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-1.621-.87a3 3 0 0 1-.879-2.122v-1.007m-9 0a4.5 4.5 0 0 1 9 0m-9 0h9m-9 0a4.5 4.5 0 0 1-4.5-4.5v-3.75a4.5 4.5 0 0 1 4.5-4.5h9a4.5 4.5 0 0 1 4.5 4.5v3.75a4.5 4.5 0 0 1-4.5 4.5m-9 0v-3.75a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 .75.75v3.75" /></svg>
+                    <div class="bg-gray-900 p-8 rounded-xl shadow-md hover:shadow-xl hover:shadow-green-500/20 transition-shadow duration-300 text-center">
+                        <div class="bg-gray-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                           <svg class="w-8 h-8 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-1.621-.87a3 3 0 0 1-.879-2.122v-1.007m-9 0a4.5 4.5 0 0 1 9 0m-9 0h9m-9 0a4.5 4.5 0 0 1-4.5-4.5v-3.75a4.5 4.5 0 0 1 4.5-4.5h9a4.5 4.5 0 0 1 4.5 4.5v3.75a4.5 4.5 0 0 1-4.5 4.5m-9 0v-3.75a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 .75.75v3.75" /></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Advanced Numerical Modeling</h3>
-                        <p class="text-gray-600">Sophisticated modeling to simulate complex water systems, predict outcomes, and optimize resource management strategies.</p>
+                        <h3 class="text-xl font-bold mb-3 text-white">Advanced Numerical Modeling</h3>
+                        <p class="text-gray-400">Sophisticated modeling to simulate complex water systems, predict outcomes, and optimize resource management strategies.</p>
                     </div>
 
                     <!-- Service Card 3: Science-Driven Advisory -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
-                        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6-2.292m0 0A9.043 9.043 0 0 0 9 7.5a9.018 9.018 0 0 0-3 1.372A8.967 8.967 0 0 1 6 18c1.969 0 3.75-.564 5.25-1.502" /></svg>
+                    <div class="bg-gray-900 p-8 rounded-xl shadow-md hover:shadow-xl hover:shadow-green-500/20 transition-shadow duration-300 text-center">
+                        <div class="bg-gray-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6-2.292m0 0A9.043 9.043 0 0 0 9 7.5a9.018 9.018 0 0 0-3 1.372A8.967 8.967 0 0 1 6 18c1.969 0 3.75-.564 5.25-1.502" /></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Science-Driven Advisory</h3>
-                        <p class="text-gray-600">Consulting services grounded in rigorous scientific research and data-informed insights to tackle your most pressing water challenges.</p>
+                        <h3 class="text-xl font-bold mb-3 text-white">Science-Driven Advisory</h3>
+                        <p class="text-gray-400">Consulting services grounded in rigorous scientific research and data-informed insights to tackle your most pressing water challenges.</p>
                     </div>
                 </div>
             </div>
@@ -148,12 +141,7 @@
     -->
     <footer id="contact" class="bg-gray-800 text-white">
         <div class="container mx-auto px-6 py-12">
-            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-                <div class="mb-6 md:mb-0">
-                    <a href="#home">
-                        <img src="logo.png" alt="Aquasphere Logo" class="h-14 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/250x60/374151/ffffff?text=Aquasphere';">
-                    </a>
-                </div>
+            <div class="flex flex-col md:flex-row justify-end items-center text-center md:text-right">
                 <div class="text-gray-300">
                     <h4 class="font-bold mb-2">Contact</h4>
                     <p>Email: <a href="mailto:valerio.aquasphere@gmail.com" class="hover:text-green-300">valerio.aquasphere@gmail.com</a></p>
@@ -169,27 +157,33 @@
         // JavaScript for header style change on scroll and mobile menu toggle.
         document.addEventListener('DOMContentLoaded', function () {
             const header = document.getElementById('header');
+            const headerLogo = document.getElementById('header-logo');
+            const navLinks = document.querySelectorAll('.nav-link');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = document.querySelectorAll('header nav a');
-            const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
 
             // --- Header style change on scroll ---
             const updateHeaderStyle = () => {
-                // For the new design, the header is always on a transparent background initially
-                // and changes to white on scroll.
                 if (window.scrollY > 50) {
                     header.classList.add('bg-white', 'shadow-md');
-                    header.querySelectorAll('nav a').forEach(a => a.classList.add('text-gray-800'));
-                    header.querySelectorAll('nav a').forEach(a => a.classList.remove('text-white'));
-                    mobileMenuButton.classList.add('text-gray-800');
+                    headerLogo.classList.remove('text-white');
+                    headerLogo.classList.add('text-gray-800');
+                    navLinks.forEach(a => {
+                        a.classList.remove('text-white');
+                        a.classList.add('text-gray-800');
+                    });
                     mobileMenuButton.classList.remove('text-white');
+                    mobileMenuButton.classList.add('text-gray-800');
                 } else {
                     header.classList.remove('bg-white', 'shadow-md');
-                    header.querySelectorAll('nav a').forEach(a => a.classList.remove('text-gray-800'));
-                    header.querySelectorAll('nav a').forEach(a => a.classList.add('text-white'));
-                    mobileMenuButton.classList.remove('text-gray-800');
+                    headerLogo.classList.add('text-white');
+                    headerLogo.classList.remove('text-gray-800');
+                    navLinks.forEach(a => {
+                        a.classList.add('text-white');
+                        a.classList.remove('text-gray-800');
+                    });
                     mobileMenuButton.classList.add('text-white');
+                    mobileMenuButton.classList.remove('text-gray-800');
                 }
             };
             window.addEventListener('scroll', updateHeaderStyle);
