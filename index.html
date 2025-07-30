@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquasphere | Flowing Insights</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles to use the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* A light gray background for the whole page */
+        }
+        /* Custom class for the hero text shadow */
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+        /* This ensures that when you jump to a section, the fixed header doesn't cover the section's title. */
+        section[id] {
+            scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 
+      Header Section
+      - Uses a fixed position to stay at the top.
+      - Background color changes on scroll for better visibility.
+    -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center space-x-3">
+                <img src="logo.png" alt="Aquasphere Logo" class="h-14 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/250x60/ffffff/333333?text=Aquasphere';">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">Home</a>
+                <a href="#services" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">Services</a>
+                <a href="#about" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">About</a>
+                <a href="#contact" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm">
+            <a href="#home" class="block text-gray-800 hover:bg-green-100 py-3 px-6">Home</a>
+            <a href="#services" class="block text-gray-800 hover:bg-green-100 py-3 px-6">Services</a>
+            <a href="#about" class="block text-gray-800 hover:bg-green-100 py-3 px-6">About</a>
+            <a href="#contact" class="block text-gray-800 hover:bg-green-100 py-3 px-6">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 
+          Hero Section
+        -->
+        <section id="home" class="relative h-screen flex items-center justify-center text-white text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1502667857243-6135159d38c6?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="relative z-10 px-4">
+                <p class="text-lg md:text-2xl max-w-3xl mx-auto mb-8 text-shadow">Tailored hydrological data and advanced modeling solutions to navigate the complexities of water resources.</p>
+                <a href="#services" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
+                    Our Services
+                </a>
+            </div>
+        </section>
+
+        <!-- 
+          Services Section
+        -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Core Expertise</h2>
+                    <p class="text-lg text-gray-600 mt-2">Delivering precision in hydrological analysis.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Service Card 1: Hydrological Datasets -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Large-Scale Hydrological Datasets</h3>
+                        <p class="text-gray-600">Creation of custom, large-scale hydrological datasets for discharge, water quality, and other key metrics to power your projects.</p>
+                    </div>
+
+                    <!-- Service Card 2: Numerical Modeling -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                           <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-1.621-.87a3 3 0 0 1-.879-2.122v-1.007m-9 0a4.5 4.5 0 0 1 9 0m-9 0h9m-9 0a4.5 4.5 0 0 1-4.5-4.5v-3.75a4.5 4.5 0 0 1 4.5-4.5h9a4.5 4.5 0 0 1 4.5 4.5v3.75a4.5 4.5 0 0 1-4.5 4.5m-9 0v-3.75a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 .75.75v3.75" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Advanced Numerical Modeling</h3>
+                        <p class="text-gray-600">Sophisticated modeling to simulate complex water systems, predict outcomes, and optimize resource management strategies.</p>
+                    </div>
+
+                    <!-- Service Card 3: Science-Driven Advisory -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6-2.292m0 0A9.043 9.043 0 0 0 9 7.5a9.018 9.018 0 0 0-3 1.372A8.967 8.967 0 0 1 6 18c1.969 0 3.75-.564 5.25-1.502" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Science-Driven Advisory</h3>
+                        <p class="text-gray-600">Consulting services grounded in rigorous scientific research and data-informed insights to tackle your most pressing water challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          About Section
+        -->
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <!-- Image Column -->
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" alt="An expert working on data analysis" class="rounded-xl shadow-lg w-full h-full object-cover">
+                    </div>
+                    <!-- Text Column -->
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Aquasphere</h2>
+                        <h4 class="text-xl font-semibold text-green-700 mb-4">Science-Driven and Data-Informed Insights</h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            Founded in 2022, Aquasphere was born from a passion for solving complex water challenges. With deep expertise in numerical modeling and the creation of hydrological datasets, Aquasphere delivers solutions grounded in rigorous analysis. The approach is collaborative, working closely with clients to achieve their goals and foster a sustainable future for our most precious resource.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 
+      Footer Section
+    -->
+    <footer id="contact" class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-6 md:mb-0">
+                    <a href="#home">
+                        <img src="logo.png" alt="Aquasphere Logo" class="h-14 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/250x60/374151/ffffff?text=Aquasphere';">
+                    </a>
+                </div>
+                <div class="text-gray-300">
+                    <h4 class="font-bold mb-2">Contact</h4>
+                    <p>Email: <a href="mailto:valerio.aquasphere@gmail.com" class="hover:text-green-300">valerio.aquasphere@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Aquasphere | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for header style change on scroll and mobile menu toggle.
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.getElementById('header');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('header nav a');
+            const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+
+            // --- Header style change on scroll ---
+            const updateHeaderStyle = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-white', 'shadow-md');
+                    navLinks.forEach(a => a.classList.replace('text-white', 'text-gray-800'));
+                    mobileMenuButton.classList.replace('text-white', 'text-gray-800');
+                } else {
+                    header.classList.remove('bg-white', 'shadow-md');
+                    navLinks.forEach(a => a.classList.replace('text-gray-800', 'text-white'));
+                    mobileMenuButton.classList.replace('text-gray-800', 'text-white');
+                }
+            };
+            window.addEventListener('scroll', updateHeaderStyle);
+            updateHeaderStyle(); // Run on load
+
+            // --- Mobile menu toggle ---
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // --- Close mobile menu when a link is clicked ---
+            const closeMobileMenu = () => mobileMenu.classList.add('hidden');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // We find the target element and scroll to it.
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault(); // Prevent instant jump
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    closeMobileMenu();
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
