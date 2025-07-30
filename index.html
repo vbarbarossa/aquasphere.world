@@ -19,10 +19,6 @@
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc; /* A light gray background for the whole page */
         }
-        /* Custom class for the hero text shadow */
-        .text-shadow {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-        }
         /* This ensures that when you jump to a section, the fixed header doesn't cover the section's title. */
         section[id] {
             scroll-margin-top: 100px;
@@ -68,12 +64,16 @@
 
     <main>
         <!-- 
-          Hero Section
+          Hero Section (New Design)
+          - Features the logo as the main element on a clean background.
         -->
-        <section id="home" class="relative h-screen flex items-center justify-center text-white text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1502667857243-6135159d38c6?q=80&w=2070&auto=format&fit=crop');">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-            <div class="relative z-10 px-4">
-                <p class="text-lg md:text-2xl max-w-3xl mx-auto mb-8 text-shadow">Tailored hydrological data and advanced modeling solutions to navigate the complexities of water resources.</p>
+        <section id="home" class="h-screen flex flex-col items-center justify-center text-center bg-white">
+            <div class="px-4">
+                <!-- Logo as the main visual element -->
+                <img src="logo.png" alt="Aquasphere Logo" class="h-32 md:h-40 w-auto mx-auto mb-8" onerror="this.onerror=null;this.src='https://placehold.co/400x100/ffffff/333333?text=Aquasphere';">
+                
+                <p class="text-lg md:text-2xl max-w-3xl mx-auto mb-8 text-gray-700">Tailored hydrological data and advanced modeling solutions to navigate the complexities of water resources.</p>
+                
                 <a href="#services" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
                     Our Services
                 </a>
@@ -83,7 +83,7 @@
         <!-- 
           Services Section
         -->
-        <section id="services" class="py-20 bg-white">
+        <section id="services" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Core Expertise</h2>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                     <!-- Service Card 1: Hydrological Datasets -->
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
                         <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                             <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" /></svg>
                         </div>
@@ -100,7 +100,7 @@
                     </div>
 
                     <!-- Service Card 2: Numerical Modeling -->
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
                         <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                            <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-1.621-.87a3 3 0 0 1-.879-2.122v-1.007m-9 0a4.5 4.5 0 0 1 9 0m-9 0h9m-9 0a4.5 4.5 0 0 1-4.5-4.5v-3.75a4.5 4.5 0 0 1 4.5-4.5h9a4.5 4.5 0 0 1 4.5 4.5v3.75a4.5 4.5 0 0 1-4.5 4.5m-9 0v-3.75a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 .75.75v3.75" /></svg>
                         </div>
@@ -109,7 +109,7 @@
                     </div>
 
                     <!-- Service Card 3: Science-Driven Advisory -->
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
                         <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                             <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6-2.292m0 0A9.043 9.043 0 0 0 9 7.5a9.018 9.018 0 0 0-3 1.372A8.967 8.967 0 0 1 6 18c1.969 0 3.75-.564 5.25-1.502" /></svg>
                         </div>
@@ -123,7 +123,7 @@
         <!-- 
           About Section
         -->
-        <section id="about" class="py-20 bg-gray-50">
+        <section id="about" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <!-- Image Column -->
@@ -176,14 +176,20 @@
 
             // --- Header style change on scroll ---
             const updateHeaderStyle = () => {
+                // For the new design, the header is always on a transparent background initially
+                // and changes to white on scroll.
                 if (window.scrollY > 50) {
                     header.classList.add('bg-white', 'shadow-md');
-                    navLinks.forEach(a => a.classList.replace('text-white', 'text-gray-800'));
-                    mobileMenuButton.classList.replace('text-white', 'text-gray-800');
+                    header.querySelectorAll('nav a').forEach(a => a.classList.add('text-gray-800'));
+                    header.querySelectorAll('nav a').forEach(a => a.classList.remove('text-white'));
+                    mobileMenuButton.classList.add('text-gray-800');
+                    mobileMenuButton.classList.remove('text-white');
                 } else {
                     header.classList.remove('bg-white', 'shadow-md');
-                    navLinks.forEach(a => a.classList.replace('text-gray-800', 'text-white'));
-                    mobileMenuButton.classList.replace('text-gray-800', 'text-white');
+                    header.querySelectorAll('nav a').forEach(a => a.classList.remove('text-gray-800'));
+                    header.querySelectorAll('nav a').forEach(a => a.classList.add('text-white'));
+                    mobileMenuButton.classList.remove('text-gray-800');
+                    mobileMenuButton.classList.add('text-white');
                 }
             };
             window.addEventListener('scroll', updateHeaderStyle);
@@ -194,18 +200,21 @@
                 mobileMenu.classList.toggle('hidden');
             });
             
-            // --- Close mobile menu when a link is clicked ---
-            const closeMobileMenu = () => mobileMenu.classList.add('hidden');
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    // We find the target element and scroll to it.
-                    const targetId = link.getAttribute('href');
+            // --- Smooth scroll for all anchor links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        e.preventDefault(); // Prevent instant jump
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
                     }
-                    closeMobileMenu();
+                    // Close mobile menu if it's open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
                 });
             });
         });
